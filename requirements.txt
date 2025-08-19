@@ -1,6 +1,7 @@
-fastapi
-uvicorn
-python-dotenv
-chromadb
-sentence-transformers
-requests
+fastapi==0.110.0
+uvicorn[standard]==0.29.0
+python-dotenv==1.0.1
+requests==2.32.3
+chromadb==0.5.3
+sentence-transformers==2.7.0
+PyPDF2==3.0.1
