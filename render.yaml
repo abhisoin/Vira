@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: hrlawbot-rag
+    env: python
+    plan: free
+    buildCommand: |
+      pip install -r requirements.txt
+    startCommand: bash boot.sh
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-4o-mini
+      - key: EMBED_MODEL_NAME
+        value: sentence-transformers/all-MiniLM-L6-v2
+      - key: DB_PATH
+        value: /var/data/ragdb
+      - key: DATA_DIR
+        value: ./sample_data
+    disk:
+      name: data
+      mountPath: /var/data
+      sizeGB: 1
